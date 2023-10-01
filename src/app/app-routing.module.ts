@@ -4,7 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = 
-[
+[ 
+  { path: 'lists', loadChildren: () => import('./lists/lists.module').then(m => m.ListsModule) },
   { path: '', component: HomeComponent},
   { path:'**', component: NotFoundComponent}
 ];
