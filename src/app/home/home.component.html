@@ -1,4 +1,3 @@
-<div class="ui container">
     <h1>To Do List Project</h1>
     <div class="field">
         <form [formGroup]= "newListForm" class="ui form fluid">
@@ -12,10 +11,9 @@
             {{newListForm.value | json}}
         </div>
         <div>
-            {{newListForm.valid}}
+            Is Valid? {{newListForm.valid}}
         </div>
         <div>
-            {{newListForm.get('listItem')?.errors | json}}
+            Valiation Errors: {{newListForm.get('listItem')?.errors | json}}
         </div>
     </div>
-</div>
