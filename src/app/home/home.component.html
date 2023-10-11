@@ -7,8 +7,15 @@
                 Please Type In What Needs to be Done:
               </div>
         </form>
+        <br>
         <div>
             {{newListForm.value | json}}
+        </div>
+        <div>
+            {{newListForm.valid}}
+        </div>
+        <div>
+            {{newListForm.get('listItem')?.errors | json}}
         </div>
     </div>
 </div>

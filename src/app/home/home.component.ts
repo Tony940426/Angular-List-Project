@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormGroup, FormControl} from '@angular/forms'
+import {FormGroup, FormControl, Validators} from '@angular/forms'
 
 @Component({
   selector: 'app-home',
@@ -8,6 +8,6 @@ import {FormGroup, FormControl} from '@angular/forms'
 })
 export class HomeComponent {
   newListForm = new FormGroup({
-    listItem: new FormControl('')
+    listItem: new FormControl('', [Validators.required, Validators.minLength(2)])
   })
 }
