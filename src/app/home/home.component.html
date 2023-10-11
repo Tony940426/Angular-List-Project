@@ -1,2 +1,14 @@
-<h1>First Angular Project</h1>
-<p>Here we go</p>
+<div class="ui container">
+    <h1>To Do List Project</h1>
+    <div class="field">
+        <form [formGroup]= "newListForm" class="ui form fluid">
+            <input formControlName="listItem" class="ui input" input="text">
+            <div class="ui pointing label">
+                Please Type In What Needs to be Done:
+              </div>
+        </form>
+        <div>
+            {{newListForm.value | json}}
+        </div>
+    </div>
+</div>
