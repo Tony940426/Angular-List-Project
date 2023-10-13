@@ -2,18 +2,17 @@
     <div class="field">
         <form [formGroup]= "newListForm" class="ui form fluid">
             <input formControlName="listItem" class="ui input" input="text">
-            <div class="ui pointing label">
-                Please Type In What Needs to be Done:
-              </div>
         </form>
+        <ng-container *ngIf="
+            newListForm.get('listItem')?.touched &&
+            newListForm.get('listItem')?.dirty ">
+            <div *ngIf="newListForm.get('listItem')?.errors?.['required']">
+                List Item Required.
+            </div>
+            <div *ngIf="newListForm.get('listItem')?.errors?.['minlength']">
+                Entered Item is only {{newListForm.get('listItem')?.errors?.['minlength'].actualLength}}.
+                Minimum minimum Length is required is  {{newListForm.get('listItem')?.errors?.['minlength'].requiredLength}}
+            </div>
+        </ng-container>
         <br>
-        <div>
-            {{newListForm.value | json}}
-        </div>
-        <div>
-            Is Valid? {{newListForm.valid}}
-        </div>
-        <div>
-            Valiation Errors: {{newListForm.get('listItem')?.errors | json}}
-        </div>
     </div>
