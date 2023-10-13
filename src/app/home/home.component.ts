@@ -8,7 +8,7 @@ import {FormGroup, FormControl, Validators} from '@angular/forms'
 })
 export class HomeComponent {
   newListForm = new FormGroup({
-    listItem: new FormControl('', [Validators.required, Validators.minLength(3)])
+    listItem: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern(/[a-zA-Z]+/)])
   })
 
   constructor(){

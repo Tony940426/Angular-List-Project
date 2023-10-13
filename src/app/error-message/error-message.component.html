@@ -10,5 +10,8 @@ control?.errors
         Entered Item is only {{control?.errors?.['minlength'].actualLength}}.
         Minimum minimum Length is required is  {{control?.errors?.['minlength'].requiredLength}}
     </div>
+    <div *ngIf="control?.errors?.['pattern']">
+        Letters Only.
+    </div>
 </ng-container>
 
