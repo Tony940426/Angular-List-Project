@@ -1,0 +1,14 @@
+<ng-container *ngIf="
+control?.touched &&
+control?.dirty &&
+control?.errors
+">
+    <div *ngIf="control?.errors?.['required']">
+        List Item Required.
+    </div>
+    <div *ngIf="control?.errors?.['minlength']">
+        Entered Item is only {{control?.errors?.['minlength'].actualLength}}.
+        Minimum minimum Length is required is  {{control?.errors?.['minlength'].requiredLength}}
+    </div>
+</ng-container>
+
